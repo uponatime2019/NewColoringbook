@@ -1,0 +1,23 @@
+## Build and IDE Folders
+[Bb]in/
+[Oo]bj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Publish and Packaging Folders
+publish/
+publish_out/
+*.zip
+*.msix
+*.appx
+*.appxbundle
+*.msixbundle
+
+## Logs and Scratch
+logs/
+*.log
+scratch/

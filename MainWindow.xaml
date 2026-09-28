@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="NewColoringbook.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NewColoringbook"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Stress Relief Coloring Book">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="NavFrame" CacheSize="10" />
+
+        <!-- Slim ambient music bar, persistent across pages -->
+        <Border
+            x:Name="MusicBar"
+            Grid.Row="1"
+            Background="{ThemeResource AppChromeAltBrush}"
+            BorderBrush="{ThemeResource AppLineBrush}"
+            BorderThickness="0,1,0,0"
+            Padding="18,6,18,6">
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="MusicNoteText"
+                    Grid.Column="0"
+                    Text="&#x266B;"
+                    FontSize="16"
+                    VerticalAlignment="Center"
+                    Foreground="{ThemeResource AppAccentBrush}" />
+                <ComboBox
+                    x:Name="MusicTrackCombo"
+                    Grid.Column="1"
+                    MinWidth="190"
+                    Height="32"
+                    FontSize="13"
+                    SelectionChanged="MusicTrackCombo_SelectionChanged"
+                    VerticalAlignment="Center"
+                    AutomationProperties.Name="Select ambient music track"
+                    ToolTipService.ToolTip="Change ambient music track" />
+                <Button
+                    x:Name="MusicPlayButton"
+                    Grid.Column="2"
+                    Click="MusicPlayButton_Click"
+                    Style="{StaticResource MusicRoundButton}"
+                    AutomationProperties.Name="Play or pause ambient music"
+                    ToolTipService.ToolTip="Play / pause ambient music">
+                    <FontIcon x:Name="MusicPlayIcon" FontFamily="Segoe Fluent Icons,Segoe MDL2 Assets" Glyph="&#xE768;" FontSize="14" />
+                </Button>
+                <FontIcon
+                    Grid.Column="3"
+                    FontFamily="Segoe Fluent Icons,Segoe MDL2 Assets"
+                    Glyph="&#xE767;"
+                    FontSize="14"
+                    Foreground="{ThemeResource AppSubtleBrush}" />
+                <Slider
+                    x:Name="MusicVolumeSlider"
+                    Grid.Column="4"
+                    Width="180"
+                    HorizontalAlignment="Left"
+                    Minimum="0"
+                    Maximum="1"
+                    StepFrequency="0.01"
+                    ValueChanged="MusicVolumeSlider_ValueChanged"
+                    AutomationProperties.Name="Ambient music volume" />
+                <TextBlock
+                    x:Name="MusicHintText"
+                    Grid.Column="5"
+                    Text="Ambient loop"
+                    Style="{StaticResource BodyText}"
+                    FontSize="12"
+                    VerticalAlignment="Center" />
+            </Grid>
+        </Border>
+
+        <!-- Offscreen host for high-resolution export rendering (in the tree, parked far left) -->
+        <Canvas
+            x:Name="OffscreenHost"
+            Grid.Row="0"
+            Width="10"
+            Height="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="-12000,0,0,0"
+            IsHitTestVisible="False" />
+    </Grid>
+</Window>
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="NewColoringbook.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NewColoringbook">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="AppChromeBrush" Color="#FAF7F2" />
+                    <SolidColorBrush x:Key="AppChromeAltBrush" Color="#F1ECE4" />
+                    <SolidColorBrush x:Key="AppCardBrush" Color="#FFFFFF" />
+                    <SolidColorBrush x:Key="AppInkBrush" Color="#241F1A" />
+                    <SolidColorBrush x:Key="AppSubtleBrush" Color="#6E655B" />
+                    <SolidColorBrush x:Key="AppLineBrush" Color="#E5DDD2" />
+                    <SolidColorBrush x:Key="AppAccentBrush" Color="#DF6A4A" />
+                    <SolidColorBrush x:Key="AppAccentSoftBrush" Color="#FCEDE6" />
+                    <SolidColorBrush x:Key="AppAccentInkBrush" Color="#B3492E" />
+                    <SolidColorBrush x:Key="AppPaperBrush" Color="#FFFFFF" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="AppChromeBrush" Color="#231F1B" />
+                    <SolidColorBrush x:Key="AppChromeAltBrush" Color="#2B2620" />
+                    <SolidColorBrush x:Key="AppCardBrush" Color="#2C2721" />
+                    <SolidColorBrush x:Key="AppInkBrush" Color="#F0E9E0" />
+                    <SolidColorBrush x:Key="AppSubtleBrush" Color="#A99E92" />
+                    <SolidColorBrush x:Key="AppLineBrush" Color="#3B342C" />
+                    <SolidColorBrush x:Key="AppAccentBrush" Color="#E87D5D" />
+                    <SolidColorBrush x:Key="AppAccentSoftBrush" Color="#3A2B23" />
+                    <SolidColorBrush x:Key="AppAccentInkBrush" Color="#F3A98F" />
+                    <SolidColorBrush x:Key="AppPaperBrush" Color="#F4EFE8" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <CornerRadius x:Key="CardCornerRadius">14</CornerRadius>
+
+            <Style x:Key="TitleText" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="26" />
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="Foreground" Value="{ThemeResource AppInkBrush}" />
+            </Style>
+            <Style x:Key="SectionText" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="Foreground" Value="{ThemeResource AppInkBrush}" />
+            </Style>
+            <Style x:Key="BodyText" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Foreground" Value="{ThemeResource AppSubtleBrush}" />
+                <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+            </Style>
+            <Style x:Key="CardRoot" TargetType="Border">
+                <Setter Property="Background" Value="{ThemeResource AppCardBrush}" />
+                <Setter Property="BorderBrush" Value="{ThemeResource AppLineBrush}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="{StaticResource CardCornerRadius}" />
+            </Style>
+            <Style x:Key="ToolButton" TargetType="ToggleButton">
+                <Setter Property="Width" Value="52" />
+                <Setter Property="Height" Value="52" />
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="RailGlyph" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Segoe Fluent Icons,Segoe MDL2 Assets" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="MusicRoundButton" TargetType="Button">
+                <Setter Property="Width" Value="34" />
+                <Setter Property="Height" Value="34" />
+                <Setter Property="CornerRadius" Value="17" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Background" Value="{ThemeResource AppAccentSoftBrush}" />
+            </Style>
+            <Style x:Key="PrimaryActionButton" TargetType="Button">
+                <Setter Property="Background" Value="{ThemeResource AppAccentBrush}" />
+                <Setter Property="Foreground" Value="#FFFFFF" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="CornerRadius" Value="18" />
+                <Setter Property="Height" Value="36" />
+                <Setter Property="Padding" Value="14,0,16,0" />
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ZenColoringbookClone (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ZenColoringbookClone (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
