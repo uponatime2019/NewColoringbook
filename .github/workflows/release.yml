@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
 jobs:
   build-and-release:
     runs-on: windows-latest
@@ -33,4 +36,3 @@ jobs:
         with:
           files: NewColoringbook-*-win-x64.zip
           generate_release_notes: true
-          overwrite: true
